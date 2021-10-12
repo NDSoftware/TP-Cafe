@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { lazy } from "react"
 
 import {
   CAvatar,
@@ -17,10 +17,10 @@ import {
   CTableHead,
   CTableHeaderCell,
   CTableRow,
-} from '@coreui/react'
-import { CChartLine } from '@coreui/react-chartjs'
-import { getStyle, hexToRgba } from '@coreui/utils'
-import CIcon from '@coreui/icons-react'
+} from "@coreui/react"
+import { CChartLine } from "@coreui/react-chartjs"
+import { getStyle, hexToRgba } from "@coreui/utils"
+import CIcon from "@coreui/icons-react"
 import {
   cibCcAmex,
   cibCcApplePay,
@@ -42,17 +42,17 @@ import {
   cilPeople,
   cilUser,
   cilUserFemale,
-} from '@coreui/icons'
+} from "@coreui/icons"
 
-import avatar1 from './../../assets/images/avatars/1.jpg'
-import avatar2 from './../../assets/images/avatars/2.jpg'
-import avatar3 from './../../assets/images/avatars/3.jpg'
-import avatar4 from './../../assets/images/avatars/4.jpg'
-import avatar5 from './../../assets/images/avatars/5.jpg'
-import avatar6 from './../../assets/images/avatars/6.jpg'
+import avatar1 from "./../../assets/images/avatars/1.jpg"
+import avatar2 from "./../../assets/images/avatars/2.jpg"
+import avatar3 from "./../../assets/images/avatars/3.jpg"
+import avatar4 from "./../../assets/images/avatars/4.jpg"
+import avatar5 from "./../../assets/images/avatars/5.jpg"
+import avatar6 from "./../../assets/images/avatars/6.jpg"
 
-const WidgetsDropdown = lazy(() => import('../components/widgets/WidgetsDropdown.js'))
-const WidgetsBrand = lazy(() => import('../components/widgets/WidgetsBrand.js'))
+const WidgetsDropdown = lazy(() => import("../components/widgets/WidgetsDropdown.js"))
+const WidgetsBrand = lazy(() => import("../components/widgets/WidgetsBrand.js"))
 
 const Dashboard = () => {
   const random = (min, max) => {
@@ -76,12 +76,12 @@ const Dashboard = () => {
                 <CIcon icon={cilCloudDownload} />
               </CButton>
               <CButtonGroup className="float-end me-3">
-                {['Day', 'Month', 'Year'].map((value) => (
+                {["Day", "Month", "Year"].map((value) => (
                   <CButton
                     color="outline-secondary"
                     key={value}
                     className="mx-0"
-                    active={value === 'Month'}
+                    active={value === "Month"}
                   >
                     {value}
                   </CButton>
@@ -90,15 +90,15 @@ const Dashboard = () => {
             </CCol>
           </CRow>
           <CChartLine
-            style={{ height: '300px', marginTop: '40px' }}
+            style={{ height: "300px", marginTop: "40px" }}
             data={{
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
               datasets: [
                 {
-                  label: 'My First dataset',
-                  backgroundColor: hexToRgba(getStyle('--cui-info'), 10),
-                  borderColor: getStyle('--cui-info'),
-                  pointHoverBackgroundColor: getStyle('--cui-info'),
+                  label: "My First dataset",
+                  backgroundColor: hexToRgba(getStyle("--cui-info"), 10),
+                  borderColor: getStyle("--cui-info"),
+                  pointHoverBackgroundColor: getStyle("--cui-info"),
                   borderWidth: 2,
                   data: [
                     random(50, 200),
@@ -112,10 +112,10 @@ const Dashboard = () => {
                   fill: true,
                 },
                 {
-                  label: 'My Second dataset',
-                  backgroundColor: 'transparent',
-                  borderColor: getStyle('--cui-success'),
-                  pointHoverBackgroundColor: getStyle('--cui-success'),
+                  label: "My Second dataset",
+                  backgroundColor: "transparent",
+                  borderColor: getStyle("--cui-success"),
+                  pointHoverBackgroundColor: getStyle("--cui-success"),
                   borderWidth: 2,
                   data: [
                     random(50, 200),
@@ -128,10 +128,10 @@ const Dashboard = () => {
                   ],
                 },
                 {
-                  label: 'My Third dataset',
-                  backgroundColor: 'transparent',
-                  borderColor: getStyle('--cui-danger'),
-                  pointHoverBackgroundColor: getStyle('--cui-danger'),
+                  label: "My Third dataset",
+                  backgroundColor: "transparent",
+                  borderColor: getStyle("--cui-danger"),
+                  pointHoverBackgroundColor: getStyle("--cui-danger"),
                   borderWidth: 1,
                   borderDash: [8, 5],
                   data: [65, 65, 65, 65, 65, 65, 65],
@@ -210,7 +210,7 @@ const Dashboard = () => {
       <CRow>
         <CCol xs>
           <CCard className="mb-4">
-            <CCardHeader>Traffic {' & '} Sales</CCardHeader>
+            <CCardHeader>Traffic {" & "} Sales</CCardHeader>
             <CCardBody>
               <CRow>
                 <CCol xs={12} md={6} xl={6}>

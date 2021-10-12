@@ -1,5 +1,5 @@
-import React from 'react'
-import CIcon from '@coreui/icons-react'
+import React from "react"
+import CIcon from "@coreui/icons-react"
 import {
   cilNotes,
   cilPuzzle,
@@ -16,106 +16,106 @@ import {
   cilFindInPage,
   cilMoney,
   cilSettings,
-} from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+} from "@coreui/icons"
+import { CNavGroup, CNavItem, CNavTitle } from "@coreui/react"
 
 const _nav = [
   {
     component: CNavItem,
-    name: 'Dashboard',
-    to: '/dashboard',
+    name: "Dashboard",
+    to: "/dashboard",
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
   {
     component: CNavGroup,
-    name: 'Master',
-    to: '/base',
+    name: "Master",
+    to: "/base",
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
-        name: 'Category',
-        to: '/base/accordion',
+        name: "Category",
+        to: "/base/accordion",
         icon: <CIcon icon={cilArrowRight} customClassName="nav-icon" />,
       },
     ],
   },
   {
     component: CNavItem,
-    name: 'Store Management',
-    to: '/dashboard',
+    name: "Store Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilStorage} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Customer Management',
-    to: '/dashboard',
+    name: "Customer Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Order Management',
-    to: '/dashboard',
+    name: "Order Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilCart} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Item Management',
-    to: '/dashboard',
+    name: "Item Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilFastfood} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Roles & Permission',
-    to: '/dashboard',
+    name: "Roles & Permission",
+    to: "/dashboard",
     icon: <CIcon icon={cilLockLocked} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Contact Us Management',
-    to: '/dashboard',
+    name: "Contact Us Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilUserPlus} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Offer Management',
-    to: '/dashboard',
+    name: "Offer Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilPaperclip} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Review & Rating Management',
-    to: '/dashboard',
+    name: "Review & Rating Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'CMS Management',
-    to: '/dashboard',
+    name: "CMS Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilFindInPage} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Banner Management',
-    to: '/dashboard',
+    name: "Banner Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Setting',
-    to: '/dashboard',
+    name: "Setting",
+    to: "/dashboard",
     icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'User Management',
-    to: '/dashboard',
+    name: "User Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilUserPlus} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Payment Management',
-    to: '/dashboard',
+    name: "Payment Management",
+    to: "/dashboard",
     icon: <CIcon icon={cilMoney} customClassName="nav-icon" />,
   },
   /*{

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import {
   CCard,
   CCardBody,
@@ -9,8 +9,8 @@ import {
   CAccordionBody,
   CAccordionHeader,
   CAccordionItem,
-} from '@coreui/react'
-import { DocsCallout, DocsExample } from 'src/components'
+} from "@coreui/react"
+import { DocsCallout, DocsExample } from "src/components"
 
 const Accordion = () => {
   return (

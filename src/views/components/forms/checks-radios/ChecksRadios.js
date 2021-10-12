@@ -1,6 +1,6 @@
-import React from 'react'
-import { CCard, CCardBody, CCardHeader, CCol, CFormCheck, CFormSwitch, CRow } from '@coreui/react'
-import { DocsCallout, DocsExample } from 'src/components'
+import React from "react"
+import { CCard, CCardBody, CCardHeader, CCol, CFormCheck, CFormSwitch, CRow } from "@coreui/react"
+import { DocsCallout, DocsExample } from "src/components"
 
 const ChecksRadios = () => {
   return (
@@ -102,7 +102,7 @@ const ChecksRadios = () => {
           <CCardBody>
             <p className="text-medium-emphasis small">
               A switch has the markup of a custom checkbox but uses the <code>switch</code> boolean
-              properly to render a toggle switch. Switches also support the <code>disabled</code>{' '}
+              properly to render a toggle switch. Switches also support the <code>disabled</code>{" "}
               attribute.
             </p>
             <DocsExample href="forms/checks-radios#switches">
@@ -198,7 +198,7 @@ const ChecksRadios = () => {
           </CCardHeader>
           <CCardBody>
             <p className="text-medium-emphasis small">
-              Group checkboxes or radios on the same horizontal row by adding <code>inline</code>{' '}
+              Group checkboxes or radios on the same horizontal row by adding <code>inline</code>{" "}
               boolean property to any <code>&lt;CFormCheck&gt;</code>.
             </p>
             <DocsExample href="forms/checks-radios#inline">
@@ -282,7 +282,7 @@ const ChecksRadios = () => {
             </p>
             <DocsExample href="forms/checks-radios#toggle-buttons">
               <CFormCheck
-                button={{ color: 'primary ' }}
+                button={{ color: "primary " }}
                 id="btn-check"
                 autoComplete="off"
                 label="Single toggle"
@@ -290,7 +290,7 @@ const ChecksRadios = () => {
             </DocsExample>
             <DocsExample href="forms/checks-radios#toggle-buttons">
               <CFormCheck
-                button={{ color: 'primary ' }}
+                button={{ color: "primary " }}
                 id="btn-check-2"
                 autoComplete="off"
                 label="Checked"
@@ -299,7 +299,7 @@ const ChecksRadios = () => {
             </DocsExample>
             <DocsExample href="forms/checks-radios#toggle-buttons">
               <CFormCheck
-                button={{ color: 'primary ' }}
+                button={{ color: "primary " }}
                 id="btn-check-3"
                 autoComplete="off"
                 label="Disabled"
@@ -309,7 +309,7 @@ const ChecksRadios = () => {
             <h3>Radio toggle buttons</h3>
             <DocsExample href="forms/checks-radios#toggle-buttons">
               <CFormCheck
-                button={{ color: 'secondary' }}
+                button={{ color: "secondary" }}
                 type="radio"
                 name="options"
                 id="option1"
@@ -318,7 +318,7 @@ const ChecksRadios = () => {
                 defaultChecked
               />
               <CFormCheck
-                button={{ color: 'secondary' }}
+                button={{ color: "secondary" }}
                 type="radio"
                 name="options"
                 id="option2"
@@ -326,7 +326,7 @@ const ChecksRadios = () => {
                 label="Radio"
               />
               <CFormCheck
-                button={{ color: 'secondary' }}
+                button={{ color: "secondary" }}
                 type="radio"
                 name="options"
                 id="option3"
@@ -335,7 +335,7 @@ const ChecksRadios = () => {
                 disabled
               />
               <CFormCheck
-                button={{ color: 'secondary' }}
+                button={{ color: "secondary" }}
                 type="radio"
                 name="options"
                 id="option4"
@@ -350,7 +350,7 @@ const ChecksRadios = () => {
             <DocsExample href="forms/checks-radios#toggle-buttons">
               <div>
                 <CFormCheck
-                  button={{ color: 'primary', variant: 'outline' }}
+                  button={{ color: "primary", variant: "outline" }}
                   id="btn-check-outlined"
                   autoComplete="off"
                   label="Single toggle"
@@ -358,7 +358,7 @@ const ChecksRadios = () => {
               </div>
               <div>
                 <CFormCheck
-                  button={{ color: 'secondary', variant: 'outline' }}
+                  button={{ color: "secondary", variant: "outline" }}
                   id="btn-check-2-outlined"
                   autoComplete="off"
                   label="Checked"
@@ -367,7 +367,7 @@ const ChecksRadios = () => {
               </div>
               <div>
                 <CFormCheck
-                  button={{ color: 'success', variant: 'outline' }}
+                  button={{ color: "success", variant: "outline" }}
                   type="radio"
                   name="options-outlined"
                   id="success-outlined"
@@ -376,7 +376,7 @@ const ChecksRadios = () => {
                   defaultChecked
                 />
                 <CFormCheck
-                  button={{ color: 'danger', variant: 'outline' }}
+                  button={{ color: "danger", variant: "outline" }}
                   type="radio"
                   name="options-outlined"
                   id="danger-outlined"

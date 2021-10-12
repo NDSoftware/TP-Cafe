@@ -1,5 +1,5 @@
-import { configure } from 'enzyme'
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
+import { configure } from "enzyme"
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17"
 
 configure({ adapter: new Adapter() })
 
@@ -8,7 +8,7 @@ if (global.document) {
     setStart: () => {},
     setEnd: () => {},
     commonAncestorContainer: {
-      nodeName: 'BODY',
+      nodeName: "BODY",
       ownerDocument: document,
     },
   })

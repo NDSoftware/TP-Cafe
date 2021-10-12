@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   CButton,
   CCard,
@@ -18,8 +18,8 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
-} from '@coreui/react'
-import { DocsCallout, DocsExample } from 'src/components'
+} from "@coreui/react"
+import { DocsCallout, DocsExample } from "src/components"
 
 const Select = () => {
   return (
@@ -86,7 +86,7 @@ const Select = () => {
           <CCardBody>
             <p className="text-medium-emphasis small">
               Input groups wrap by default via <code>flex-wrap: wrap</code> in order to accommodate
-              custom form field validation within an input group. You may disable this with{' '}
+              custom form field validation within an input group. You may disable this with{" "}
               <code>.flex-nowrap</code>.
             </p>
             <DocsExample href="forms/input-group#wrapping">
@@ -184,7 +184,7 @@ const Select = () => {
           <CCardBody>
             <p className="text-medium-emphasis small">
               While multiple <code>&lt;CFormInput&gt;</code>s are supported visually, validation
-              styles are only available for input groups with a single{' '}
+              styles are only available for input groups with a single{" "}
               <code>&lt;CFormInput&gt;</code>.
             </p>
             <DocsExample href="forms/input-group#multiple-inputs">
