@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector, useDispatch, connect } from "react-redux"
 
 import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from "@coreui/react"
 import CIcon from "@coreui/icons-react"
@@ -11,22 +12,25 @@ import { sygnet } from "src/assets/brand/sygnet"
 
 import SimpleBar from "simplebar-react"
 import "simplebar/dist/simplebar.min.css"
+import { togglebar } from "../redux/Sidebar/SidebarActionCreators"
 
 // sidebar nav config
 import navigation from "../_nav"
 
-const AppSidebar = () => {
+const AppSidebar = (props) => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
+  console.log(":::::::sides::::::::>", props.sides)
 
   return (
     <CSidebar
       position="fixed"
-      unfoldable={unfoldable}
-      visible={sidebarShow}
+      unfoldable={props.sides.sidebarUnfoldable}
+      visible={props.sides.sidebarShow}
       onVisibleChange={(visible) => {
-        dispatch({ type: "set", sidebarShow: visible })
+        // dispatch({ type: "set", sidebarShow: visible })
+        togglebar()
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
@@ -40,10 +44,21 @@ const AppSidebar = () => {
       </CSidebarNav>
       <CSidebarToggler
         className="d-none d-lg-flex"
-        onClick={() => dispatch({ type: "set", sidebarUnfoldable: !unfoldable })}
+        // onClick={() => dispatch({ type: "set", sidebarUnfoldable: !unfoldable })}
+        onClick={() => props.togglebar()}
       />
     </CSidebar>
   )
 }
 
-export default React.memo(AppSidebar)
+const mapStateToProps = (state) => {
+  return {
+    sides: state.SidebarReducer,
+  }
+}
+
+const mapDispatchToProps = {
+  togglebar,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(AppSidebar))

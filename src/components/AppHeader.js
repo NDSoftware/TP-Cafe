@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from "react"
 import { NavLink } from "react-router-dom"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector, useDispatch, connect } from "react-redux"
 import {
   CContainer,
   CHeader,
@@ -18,7 +19,9 @@ import { AppBreadcrumb } from "./index"
 import { AppHeaderDropdown } from "./header/index"
 import { logo } from "src/assets/brand/logo"
 
-const AppHeader = () => {
+import { toggleSide } from "../redux/Sidebar/SidebarActionCreators"
+
+const AppHeader = (props) => {
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
 
@@ -27,7 +30,8 @@ const AppHeader = () => {
       <CContainer fluid>
         <CHeaderToggler
           className="ps-1"
-          onClick={() => dispatch({ type: "set", sidebarShow: !sidebarShow })}
+          onClick={() => props.toggleSide()}
+          // onClick={() => dispatch({ type: "set", sidebarShow: !sidebarShow })}
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
@@ -76,4 +80,14 @@ const AppHeader = () => {
   )
 }
 
-export default AppHeader
+const mapStateToProps = (state) => {
+  return {
+    sides: state.SidebarReducer,
+  }
+}
+
+const mapDispatchToProps = {
+  toggleSide,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppHeader)
