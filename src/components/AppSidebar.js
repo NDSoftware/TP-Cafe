@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react"
 import { useSelector, useDispatch, connect } from "react-redux"
 
@@ -18,16 +17,9 @@ import { togglebar } from "../redux/Sidebar/SidebarActionCreators"
 import navigation from "../_nav"
 
 const AppSidebar = (props) => {
-  const dispatch = useDispatch()
-  const unfoldable = useSelector((state) => state.sidebarUnfoldable)
-  const sidebarShow = useSelector((state) => state.sidebarShow)
-  console.log(":::::::sides::::::::>", props.sides)
-
   return (
     <CSidebar
       position="fixed"
-      unfoldable={props.sides.sidebarUnfoldable}
-      visible={props.sides.sidebarShow}
       onVisibleChange={(visible) => {
         // dispatch({ type: "set", sidebarShow: visible })
         togglebar()
