@@ -815,7 +815,7 @@ const Widgets = () => {
               <CWidgetStatsC
                 icon={<CIcon icon={cilUserFollow} height={36} />}
                 value="385"
-                title="New Clients"
+                title="Total Customer"
                 progress={{ color: 'success', value: 75 }}
                 className="mb-4"
               />
@@ -824,7 +824,7 @@ const Widgets = () => {
               <CWidgetStatsC
                 icon={<CIcon icon={cilBasket} height={36} />}
                 value="1238"
-                title="Products sold"
+                title="Total Orders"
                 progress={{ color: 'warning', value: 75 }}
                 className="mb-4"
               />

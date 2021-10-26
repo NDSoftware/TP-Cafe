@@ -16,7 +16,7 @@ import {
   CTableDataCell,
   CTableHead,
   CTableHeaderCell,
-  CTableRow,
+  CTableRow, CWidgetStatsC,
 } from '@coreui/react'
 import { CChartLine } from '@coreui/react-chartjs'
 import { getStyle, hexToRgba } from '@coreui/utils'
@@ -41,7 +41,7 @@ import {
   cilCloudDownload,
   cilPeople,
   cilUser,
-  cilUserFemale,
+  cilUserFemale, cilUserFollow, cilBasket, cilChartPie, cilSpeedometer, cilSpeech,
 } from '@coreui/icons'
 
 import avatar1 from './../../assets/images/avatars/1.jpg'
@@ -50,6 +50,7 @@ import avatar3 from './../../assets/images/avatars/3.jpg'
 import avatar4 from './../../assets/images/avatars/4.jpg'
 import avatar5 from './../../assets/images/avatars/5.jpg'
 import avatar6 from './../../assets/images/avatars/6.jpg'
+import {DocsExample} from "../../components";
 
 const WidgetsDropdown = lazy(() => import('../components/widgets/WidgetsDropdown.js'))
 const WidgetsBrand = lazy(() => import('../components/widgets/WidgetsBrand.js'))
@@ -61,7 +62,36 @@ const Dashboard = () => {
 
   return (
     <>
-      <WidgetsDropdown />
+      <CRow>
+        <CCol sm={6} md={4}>
+          <CWidgetStatsC
+            icon={<CIcon icon={cilUserFollow} height={36} />}
+            value="385"
+            title="Total Customer"
+            progress={{ color: 'success', value: 75 }}
+            className="mb-4"
+          />
+        </CCol>
+        <CCol sm={6} md={4}>
+          <CWidgetStatsC
+            icon={<CIcon icon={cilBasket} height={36} />}
+            value="1238"
+            title="Total Orders"
+            progress={{ color: 'warning', value: 75 }}
+            className="mb-4"
+          />
+        </CCol>
+        <CCol sm={6} md={4}>
+          <CWidgetStatsC
+            icon={<CIcon icon={cilBasket} height={36} />}
+            value="123"
+            title="Today Total Orders"
+            progress={{ color: 'warning', value: 25 }}
+            className="mb-4"
+          />
+        </CCol>
+      </CRow>
+      {/*<WidgetsDropdown />
       <CCard className="mb-4">
         <CCardBody>
           <CRow>
@@ -611,7 +641,7 @@ const Dashboard = () => {
             </CCardBody>
           </CCard>
         </CCol>
-      </CRow>
+      </CRow>*/}
     </>
   )
 }

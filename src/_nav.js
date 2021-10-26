@@ -35,7 +35,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Category',
-        to: '/base/accordion',
+        to: '/category',
         icon: <CIcon icon={cilArrowRight} customClassName="nav-icon" />,
       },
     ],
@@ -72,7 +72,7 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Contact Us Management',
+    name: 'Contact Us',
     to: '/dashboard',
     icon: <CIcon icon={cilUserPlus} customClassName="nav-icon" />,
   },
@@ -84,7 +84,7 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Review & Rating Management',
+    name: 'Review & Rating',
     to: '/dashboard',
     icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
   },
