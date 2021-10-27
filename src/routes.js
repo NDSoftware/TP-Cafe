@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
@@ -55,6 +54,8 @@ const Widgets = React.lazy(() => import('./views/components/widgets/Widgets'))
 
 // Modules
 const Category = React.lazy(() => import('./views/modules/category/categoryList'));
+const StoreManagementList = React.lazy(() => import('./views/modules/store-management/StoreManagementList'))
+const StoreManagementAdd = React.lazy(() => import('./views/modules/store-management/StoreManagementAddUpdate'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -100,7 +101,9 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', component: Modals },
   { path: '/notifications/toasts', name: 'Toasts', component: Toasts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
-  { path: '/category', name: 'Category', component: Category}
+  { path: '/category', name: 'Category', component: Category},
+  { path: '/storeManagement', name: 'Store Management', component: StoreManagementList},
+  { path: '/storeManagement/add', name: 'Store Management Add', component: StoreManagementAdd}
 ]
 
 export default routes

@@ -16,8 +16,9 @@ import {
 import {cilPencil} from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 import ReactSwitch from "../../components/react-switch/React-Switch";
+import {Link} from "react-router-dom";
 
-class CategoryList extends Component {
+class StoreManagementList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,60 +33,60 @@ class CategoryList extends Component {
     {
       id: 1,
       name: 'Beetlejuice',
-      year: '1988',
+      storeStatus: 'Active',
     },
     {
       id: 2,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'Active',
     },
     {
       id: 3,
       name: 'Energy Drink',
-      year: '1984',
+      storeStatus: 'Active',
     },
     {
       id: 4,
       name: 'Soft Drink',
-      year: '1984',
+      storeStatus: 'Active',
     },
     {
       id: 5,
       name: 'Pizza',
-      year: '1984',
+      storeStatus: 'Active',
     },
     {
       id: 6,
       name: 'Beverages',
-      year: '1984',
+      storeStatus: 'Active',
     },{
       id: 7,
       name: 'Main Course',
-      year: '1984',
+      storeStatus: 'DeActive',
     },{
       id: 8,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'DeActive',
     },{
       id: 9,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'Active',
     },{
       id: 10,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'Active',
     },{
       id: 11,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'DEActive',
     },{
       id: 12,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'Active',
     },{
       id: 13,
       name: 'Ghostbusters',
-      year: '1984',
+      storeStatus: 'DeActive',
     },
   ];
 
@@ -95,41 +96,45 @@ class CategoryList extends Component {
       selector: row => row.id,
     },
     {
-      name: 'Name',
+      name: 'Store Name',
       selector: row => row.name,
     },
-     {
-       name: 'Action',
-       selector: row => {
-         return (
-           <>
-             <CIcon icon={cilPencil} className="cursor-pointer" onClick={() => this.onClose('edit')}/>
-             <ReactSwitch/>
-           </>
-         )
-       }
-     }
+    {
+      name: 'Store Status',
+      selector: row => row.storeStatus,
+    },
+    {
+      name: 'Action',
+      selector: row => {
+        return (
+          <>
+            <CIcon icon={cilPencil} className="cursor-pointer" onClick={() => this.onClose('edit')}/>
+            <ReactSwitch/>
+          </>
+        )
+      }
+    }
   ];
 
 
-   onClose = (addEdit) => {
-     this.setState({
-       visible: !this.state.visible,
-       add: false,
-       edit: false,
-     });
-     if (addEdit !== '' && addEdit === 'edit') {
-       this.setState({
-         add: false,
-         edit: true,
-       });
-     } else {
-       this.setState({
-         add: true,
-         edit: false,
-       });
-     }
-   }
+  onClose = (addEdit) => {
+    this.setState({
+      visible: !this.state.visible,
+      add: false,
+      edit: false,
+    });
+    if (addEdit !== '' && addEdit === 'edit') {
+      this.setState({
+        add: false,
+        edit: true,
+      });
+    } else {
+      this.setState({
+        add: true,
+        edit: false,
+      });
+    }
+  }
 
   render() {
     return(
@@ -138,9 +143,9 @@ class CategoryList extends Component {
           <CCol xs={12}>
             <CCard className="mb-4">
               <CCardHeader>
-                <strong>Category Management</strong>
+                <strong>Store Management</strong>
                 <div className="float-end">
-                  <button className="btn btn-primary btn-sm" onClick={() => this.onClose('add')}>Add New</button>
+                  <Link to="/storeManagement/add" className="btn btn-primary btn-sm">Add New</Link>
                 </div>
               </CCardHeader>
               <CCardBody>
@@ -174,4 +179,4 @@ class CategoryList extends Component {
   }
 }
 
-export default memo(CategoryList);
+export default memo(StoreManagementList);

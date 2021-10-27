@@ -43,7 +43,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Store Management',
-    to: '/dashboard',
+    to: '/storeManagement',
     icon: <CIcon icon={cilStorage} customClassName="nav-icon" />,
   },
   {
