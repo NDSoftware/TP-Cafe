@@ -4,4 +4,13 @@
 .react-switch {
   margin-left: 5px;
 }
+.rdt_TableHeadRow {
+  font-weight: bolder;
+  font-size: 14px;
+}
+.required-mark:after {
+  content: ' *';
+  color: red;
+}
+
 

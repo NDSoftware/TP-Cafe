@@ -102,8 +102,9 @@ const routes = [
   { path: '/notifications/toasts', name: 'Toasts', component: Toasts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/category', name: 'Category', component: Category},
-  { path: '/storeManagement', name: 'Store Management', component: StoreManagementList},
-  { path: '/storeManagement/add', name: 'Store Management Add', component: StoreManagementAdd}
+  { path: '/storeManagement', name: 'Store Management', component: StoreManagementList, exact: true},
+  { path: '/storeManagement/add', name: 'Store Management Add', component: StoreManagementAdd, exact: true},
+  { path: '/storeManagement/edit', name: 'Store Management Add', component: StoreManagementAdd, exact: true}
 ]
 
 export default routes

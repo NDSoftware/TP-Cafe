@@ -15,6 +15,7 @@ const ReactSwitch = (props) => {
           onChange={handleChange}
           onColor="#55ad2b"
           onHandleColor="#2693e6"
+          offHandleColor="#2693e6"
           handleDiameter={20}
           uncheckedIcon={false}
           checkedIcon={false}

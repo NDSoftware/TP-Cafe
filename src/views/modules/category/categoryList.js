@@ -103,7 +103,9 @@ class CategoryList extends Component {
        selector: row => {
          return (
            <>
-             <CIcon icon={cilPencil} className="cursor-pointer" onClick={() => this.onClose('edit')}/>
+             <button  className="btn btn-primary btn-sm" onClick={() => this.onClose('edit')}>
+               <CIcon icon={cilPencil} className="cursor-pointer" />
+             </button>
              <ReactSwitch/>
            </>
          )

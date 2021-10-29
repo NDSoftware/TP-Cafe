@@ -108,7 +108,7 @@ class StoreManagementList extends Component {
       selector: row => {
         return (
           <>
-            <CIcon icon={cilPencil} className="cursor-pointer" onClick={() => this.onClose('edit')}/>
+            <Link to={"/storeManagement/edit"} className="btn btn-primary btn-sm"><CIcon icon={cilPencil} className="cursor-pointer"/></Link>
             <ReactSwitch/>
           </>
         )
@@ -145,7 +145,7 @@ class StoreManagementList extends Component {
               <CCardHeader>
                 <strong>Store Management</strong>
                 <div className="float-end">
-                  <Link to="/storeManagement/add" className="btn btn-primary btn-sm">Add New</Link>
+                  <Link to={"/storeManagement/add"} className="btn btn-primary btn-sm">Add New</Link>
                 </div>
               </CCardHeader>
               <CCardBody>
