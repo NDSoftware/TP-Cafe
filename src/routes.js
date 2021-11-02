@@ -54,8 +54,9 @@ const Widgets = React.lazy(() => import('./views/components/widgets/Widgets'))
 
 // Modules
 const Category = React.lazy(() => import('./views/modules/category/categoryList'));
-const StoreManagementList = React.lazy(() => import('./views/modules/store-management/StoreManagementList'))
-const StoreManagementAdd = React.lazy(() => import('./views/modules/store-management/StoreManagementAddUpdate'))
+const StoreManagementList = React.lazy(() => import('./views/modules/store-management/StoreManagementList'));
+const StoreManagementAdd = React.lazy(() => import('./views/modules/store-management/StoreManagementAddUpdate'));
+const CustomerManagementList = React.lazy(() => import('./views/modules/customer-management/CustomerManagementList'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -104,7 +105,8 @@ const routes = [
   { path: '/category', name: 'Category', component: Category},
   { path: '/storeManagement', name: 'Store Management', component: StoreManagementList, exact: true},
   { path: '/storeManagement/add', name: 'Store Management Add', component: StoreManagementAdd, exact: true},
-  { path: '/storeManagement/edit', name: 'Store Management Add', component: StoreManagementAdd, exact: true}
+  { path: '/storeManagement/edit', name: 'Store Management Add', component: StoreManagementAdd, exact: true},
+  { path: '/customerManagement', name: 'Customer Management', component: CustomerManagementList, exact: true}
 ]
 
 export default routes

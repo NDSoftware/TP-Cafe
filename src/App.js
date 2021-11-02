@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import './scss/style.scss'
-import StoreManagementRoute from "./views/modules/store-management/StoreManagementRoute";
+import 'font-awesome/css/font-awesome.min.css';
+import {Provider} from "react-redux";
+import {ToastContainer} from "react-toastify";
+import store from "./store";
+import 'react-toastify/dist/ReactToastify.css';
 
 const loading = (
   <div className="pt-3 text-center">
@@ -20,22 +24,25 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <React.Suspense fallback={loading}>
-          <Switch>
-            <Route exact path="/login" name="Login Page" render={(props) => <Login {...props} />} />
-            {/*<Route
-              exact
-              path="/register"
-              name="Register Page"
-              render={(props) => <Register {...props} />}
-            />*/}
-            <Route exact path="/404" name="Page 404" render={(props) => <Page404 {...props} />} />
-            <Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />
-            <Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />
-          </Switch>
-        </React.Suspense>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <React.Suspense fallback={loading}>
+            <Switch>
+              <Route exact path="/login" name="Login Page" render={(props) => <Login {...props} />} />
+              {/*<Route
+                exact
+                path="/register"
+                name="Register Page"
+                render={(props) => <Register {...props} />}
+              />*/}
+              <Route exact path="/404" name="Page 404" render={(props) => <Page404 {...props} />} />
+              <Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />
+              <Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />
+            </Switch>
+          </React.Suspense>
+        </BrowserRouter>
+        <ToastContainer />
+      </Provider>
     )
   }
 }
