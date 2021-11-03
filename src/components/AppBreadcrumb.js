@@ -10,6 +10,7 @@ const AppBreadcrumb = () => {
 
   const getRouteName = (pathname, routes) => {
     const currentRoute = routes.find((route) => route.path === pathname)
+    console.log(currentRoute);
     return currentRoute.name
   }
 
@@ -20,7 +21,7 @@ const AppBreadcrumb = () => {
       breadcrumbs.push({
         pathname: currentPathname,
         name: getRouteName(currentPathname, routes),
-        active: index + 1 === array.length ? true : false,
+        active: index + 1 === array.length,
       })
       return currentPathname
     })
@@ -31,7 +32,7 @@ const AppBreadcrumb = () => {
 
   return (
     <CBreadcrumb className="m-0 ms-2">
-      <CBreadcrumbItem href="/">Home</CBreadcrumbItem>
+      <CBreadcrumbItem href="/">Dashboard</CBreadcrumbItem>
       {breadcrumbs.map((breadcrumb, index) => {
         return (
           <CBreadcrumbItem

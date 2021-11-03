@@ -57,6 +57,10 @@ const Category = React.lazy(() => import('./views/modules/category/categoryList'
 const StoreManagementList = React.lazy(() => import('./views/modules/store-management/StoreManagementList'));
 const StoreManagementAdd = React.lazy(() => import('./views/modules/store-management/StoreManagementAddUpdate'));
 const CustomerManagementList = React.lazy(() => import('./views/modules/customer-management/CustomerManagementList'));
+const OrderManagementList = React.lazy(() => import('./views/modules/order-management/OrderManagementList'));
+const OrderManagementDetails = React.lazy(() => import('./views/modules/order-management/OrderManagementDetail'));
+const ProductManagementList = React.lazy(() => import('./views/modules/item-management/ItemManagementList'));
+const ProductManagementAddUpdate = React.lazy(() => import('./views/modules/item-management/ItemManagementAddUpdate'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -103,10 +107,14 @@ const routes = [
   { path: '/notifications/toasts', name: 'Toasts', component: Toasts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/category', name: 'Category', component: Category},
-  { path: '/storeManagement', name: 'Store Management', component: StoreManagementList, exact: true},
-  { path: '/storeManagement/add', name: 'Store Management Add', component: StoreManagementAdd, exact: true},
-  { path: '/storeManagement/edit', name: 'Store Management Add', component: StoreManagementAdd, exact: true},
-  { path: '/customerManagement', name: 'Customer Management', component: CustomerManagementList, exact: true}
+  { path: '/store-management', name: 'Store Management', component: StoreManagementList, exact: true},
+  { path: '/store-management/add', name: 'Store Management Add', component: StoreManagementAdd, exact: true},
+  { path: '/store-management/edit', name: 'Store Management Edit', component: StoreManagementAdd, exact: true},
+  { path: '/customer-management', name: 'Customer Management', component: CustomerManagementList, exact: true},
+  { path: '/order-management', name: 'Order Management', component: OrderManagementList, exact: true},
+  { path: '/order-management/details', name: 'Order Details', component: OrderManagementDetails, exact: true},
+  { path: '/item-management', name: 'Product Management', component: ProductManagementList, exact: true},
+  { path: '/item-management/add', name: 'Product Management Add', component: ProductManagementAddUpdate, exact: true},
 ]
 
 export default routes

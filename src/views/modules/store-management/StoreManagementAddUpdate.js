@@ -39,9 +39,7 @@ class StoreManagementAddUpdate extends Component {
 
   changeHandler = ev => {
     const {name,value}=ev.target;
-    this.setState({[name]:value}, () => {
-      console.log(this.state[name]);
-    })
+    this.setState({[name]:value})
   }
 
   onClickBack = () => {

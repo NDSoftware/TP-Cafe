@@ -43,25 +43,25 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Store Management',
-    to: '/storeManagement',
+    to: '/store-management',
     icon: <CIcon icon={cilStorage} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Customer Management',
-    to: '/customerManagement',
+    to: '/customer-management',
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Order Management',
-    to: '/dashboard',
+    to: '/order-management',
     icon: <CIcon icon={cilCart} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Item Management',
-    to: '/dashboard',
+    to: '/item-management',
     icon: <CIcon icon={cilFastfood} customClassName="nav-icon" />,
   },
   {
