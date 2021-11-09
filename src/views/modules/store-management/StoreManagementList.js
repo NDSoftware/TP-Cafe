@@ -108,7 +108,7 @@ class StoreManagementList extends Component {
       selector: row => {
         return (
           <>
-            <Link to={"/storeManagement/edit"} className="btn btn-primary btn-sm"><CIcon icon={cilPencil} className="cursor-pointer"/></Link>
+            <Link to={"/store-management/edit"} className="btn btn-primary btn-sm"><CIcon icon={cilPencil} className="cursor-pointer"/></Link>
             <ReactSwitch/>
           </>
         )
