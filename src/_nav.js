@@ -67,13 +67,13 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Roles & Permission',
-    to: '/dashboard',
+    to: '/roles-permissions',
     icon: <CIcon icon={cilLockLocked} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Contact Us',
-    to: '/dashboard',
+    to: '/contact-us',
     icon: <CIcon icon={cilUserPlus} customClassName="nav-icon" />,
   },
   {

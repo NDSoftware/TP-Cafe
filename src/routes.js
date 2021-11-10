@@ -61,6 +61,8 @@ const OrderManagementList = React.lazy(() => import('./views/modules/order-manag
 const OrderManagementDetails = React.lazy(() => import('./views/modules/order-management/OrderManagementDetail'));
 const ProductManagementList = React.lazy(() => import('./views/modules/item-management/ItemManagementList'));
 const ProductManagementAddUpdate = React.lazy(() => import('./views/modules/item-management/ItemManagementAddUpdate'));
+const RolesPermission = React.lazy(() => import('./views/modules/roles-and-permissions/RolesPermissionList'));
+const ContactUs = React.lazy(() => import('./views/modules/contact-us/ContactUsList'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -115,6 +117,8 @@ const routes = [
   { path: '/order-management/details', name: 'Order Details', component: OrderManagementDetails, exact: true},
   { path: '/item-management', name: 'Product Management', component: ProductManagementList, exact: true},
   { path: '/item-management/add', name: 'Product Management Add', component: ProductManagementAddUpdate, exact: true},
+  { path: '/roles-permissions', name: 'Roles & Permissions', component: RolesPermission, exact: true },
+  { path: '/contact-us', name: 'Contact Us', component: ContactUs, exact: true }
 ]
 
 export default routes
