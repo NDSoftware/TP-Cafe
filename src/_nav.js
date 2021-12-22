@@ -79,7 +79,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Offer Management',
-    to: '/dashboard',
+    to: '/offer-management',
     icon: <CIcon icon={cilPaperclip} customClassName="nav-icon" />,
   },
   {

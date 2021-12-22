@@ -1,4 +1,5 @@
 import React from 'react'
+import OfferManagementList from "./views/modules/offer-management/OfferManagementList";
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
@@ -63,6 +64,7 @@ const ProductManagementList = React.lazy(() => import('./views/modules/item-mana
 const ProductManagementAddUpdate = React.lazy(() => import('./views/modules/item-management/ItemManagementAddUpdate'));
 const RolesPermission = React.lazy(() => import('./views/modules/roles-and-permissions/RolesPermissionList'));
 const ContactUs = React.lazy(() => import('./views/modules/contact-us/ContactUsList'));
+const OfferManagement = React.lazy(() => import('./views/modules/offer-management/OfferManagementList'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -118,7 +120,8 @@ const routes = [
   { path: '/item-management', name: 'Product Management', component: ProductManagementList, exact: true},
   { path: '/item-management/add', name: 'Product Management Add', component: ProductManagementAddUpdate, exact: true},
   { path: '/roles-permissions', name: 'Roles & Permissions', component: RolesPermission, exact: true },
-  { path: '/contact-us', name: 'Contact Us', component: ContactUs, exact: true }
+  { path: '/contact-us', name: 'Contact Us', component: ContactUs, exact: true },
+  {path: '/offer-management', name: 'Offer Management', component: OfferManagement, exact: true }
 ]
 
 export default routes

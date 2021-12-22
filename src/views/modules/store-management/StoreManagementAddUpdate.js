@@ -47,11 +47,15 @@ class StoreManagementAddUpdate extends Component {
   }
 
   /*File Upload Start*/
-  uploadImage = (event, stateName, previewStateName) => {
+  uploadImage = (event, stateName, previewStateName, allowedFiles) => {
     if (event && event.target && event.target.files && event.target.files.length !== 0) {
       const arr = [...this.state[stateName]];
       const preview = [...this.state[previewStateName]];
       const mainArr = [...event.target.files];
+      if (mainArr.length > allowedFiles) {
+        toast.error('Max ' + allowedFiles + ' files are allowed to upload!');
+        return;
+      }
       mainArr.forEach((fl) => {
         if (this.configConst.fileTypeSupport.includes(fl.type)) {
           const size = fl.size / 1024 / 1024;
@@ -122,6 +126,12 @@ class StoreManagementAddUpdate extends Component {
                       validated={this.state.validated}
                       onSubmit={this.handleSubmit}>
                   <div className="row">
+                    <div className="col-md-12 form-group">
+                      <div className="float-end mr-2">
+                        <CFormCheck id="storeStatus" label="Active" value={this.state.storeStatus} onChange={this.changeHandler} />
+                      </div>
+                      <CFormLabel className="float-end ml-2" htmlFor="storeStatus">Store Status <span className="required-mark"/></CFormLabel>
+                    </div>
                     <div className="col-md-6 form-group">
                       <CFormLabel htmlFor="storeName">Store Name <span className="required-mark"/></CFormLabel>
                       <CFormInput
@@ -148,13 +158,13 @@ class StoreManagementAddUpdate extends Component {
                       />
                       <CFormFeedback invalid>Please enter store contact person name.</CFormFeedback>
                     </div>
-                    <div className="col-md-12 form-group">
+                    <div className="col-md-6 form-group">
                       <CFormLabel htmlFor="storeAddress">Store Address <span className="required-mark"/></CFormLabel>
                       <CFormTextarea
                         name="storeAddress"
                         id="storeAddress"
                         required
-                        rows="3"
+                        rows="5"
                         placeholder="Store Address"
                         value={this.state.storeAddress}
                         onChange={this.changeHandler}
@@ -162,30 +172,69 @@ class StoreManagementAddUpdate extends Component {
                       <CFormFeedback invalid>Please enter store address.</CFormFeedback>
                     </div>
                     <div className="col-md-6 form-group">
-                      <CFormLabel htmlFor="storeContactNumber">Store Contact No. <span className="required-mark"/></CFormLabel>
-                      <CFormInput
-                        type="text"
-                        name="storeContactNumber"
-                        id="storeContactNumber"
-                        required
-                        placeholder="Store Contact Number"
-                        value={this.state.storeContactNumber}
-                        onChange={this.changeHandler}
-                      />
-                      <CFormFeedback invalid>Please enter store contact no.</CFormFeedback>
+                      <div className="row">
+                        <div className="col-md-12 form-group">
+                          <CFormLabel htmlFor="storeContactNumber">Store Contact No. <span className="required-mark"/></CFormLabel>
+                          <CFormInput
+                            type="text"
+                            name="storeContactNumber"
+                            id="storeContactNumber"
+                            required
+                            placeholder="Store Contact Number"
+                            value={this.state.storeContactNumber}
+                            onChange={this.changeHandler}
+                          />
+                          <CFormFeedback invalid>Please enter store contact no.</CFormFeedback>
+                        </div>
+                        <div className="col-md-12 form-group">
+                          <CFormLabel htmlFor="storeGSTNo">Store GST No. <span className="required-mark"/></CFormLabel>
+                          <CFormInput
+                            type="text"
+                            name="storeGSTNo"
+                            id="storeGSTNo"
+                            required
+                            placeholder="Store GST No."
+                            value={this.state.storeGSTNo}
+                            onChange={this.changeHandler}
+                          />
+                          <CFormFeedback invalid>Please enter store GST no.</CFormFeedback>
+                        </div>
+                      </div>
                     </div>
                     <div className="col-md-6 form-group">
-                      <CFormLabel htmlFor="storeGSTNo">Store GST No. <span className="required-mark"/></CFormLabel>
-                      <CFormInput
-                        type="text"
-                        name="storeGSTNo"
-                        id="storeGSTNo"
-                        required
-                        placeholder="Store GST No."
-                        value={this.state.storeGSTNo}
-                        onChange={this.changeHandler}
-                      />
-                      <CFormFeedback invalid>Please enter store GST no.</CFormFeedback>
+                      <CFormLabel htmlFor="storeTiming">Store Timings <span className="required-mark"/></CFormLabel>
+                      <div className="mr-2 mt-3">
+                        <div className="row form-group">
+                          <div className="col-md-6 form-group">
+                            <CFormLabel htmlFor="storeTimingOpen">Open Time <span className="required-mark"/></CFormLabel>
+                          </div>
+                          <div className="col-md-6 form-group">
+                            <CFormInput
+                              type="time"
+                              name="storeTimingOpen"
+                              id="storeTimingOpen"
+                              required
+                              value={this.state.storeTimingOpen}
+                              onChange={this.changeHandler}
+                            />
+                          </div>
+                        </div>
+                        <div className="row form-group">
+                          <div className="col-md-6 form-group">
+                            <CFormLabel htmlFor="storeTimingClose">Close Time <span className="required-mark"/></CFormLabel>
+                          </div>
+                          <div className="col-md-6 form-group">
+                            <CFormInput
+                              type="time"
+                              name="storeTimingClose"
+                              id="storeTimingClose"
+                              required
+                              value={this.state.storeTimingClose}
+                              onChange={this.changeHandler}
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div className="col-md-6 form-group">
                       <CFormLabel htmlFor="storeImage">Store Image <span className="required-mark"/></CFormLabel>
@@ -197,7 +246,7 @@ class StoreManagementAddUpdate extends Component {
                           required
                           multiple
                           placeholder="Choose Store Image"
-                          onChange={($event) => this.uploadImage($event, 'storeImage', 'previewStoreImage')}
+                          onChange={($event) => this.uploadImage($event, 'storeImage', 'previewStoreImage', 5)}
                         />
                       </i>
                       <CFormFeedback invalid>Please upload at least one store image.</CFormFeedback>
@@ -232,7 +281,7 @@ class StoreManagementAddUpdate extends Component {
                           required
                           multiple
                           placeholder="Choose Store GST Image"
-                          onChange={($event) => this.uploadImage($event, 'storeGSTImage', 'previewStoreGSTImage')}
+                          onChange={($event) => this.uploadImage($event, 'storeGSTImage', 'previewStoreGSTImage', 2)}
                         />
                       </i>
                       <CFormFeedback invalid>Please upload at least one store GST image.</CFormFeedback>
@@ -267,7 +316,7 @@ class StoreManagementAddUpdate extends Component {
                           required
                           multiple
                           placeholder="Choose Store Registration Certificate"
-                          onChange={($event) => this.uploadImage($event, 'storeCertificate', 'previewStoreCertificate')}
+                          onChange={($event) => this.uploadImage($event, 'storeCertificate', 'previewStoreCertificate', 2)}
                         />
                       </i>
                       <CFormFeedback invalid>Please upload at least one store registration certificate image.</CFormFeedback>
@@ -290,47 +339,6 @@ class StoreManagementAddUpdate extends Component {
                             <img src={this.configConst.defaultImage} alt="Choose Store Image"/>
                           </>
                         }
-                      </div>
-                    </div>
-                    <div className="col-md-4 form-group">
-                      <CFormLabel htmlFor="storeTiming">Store Timings <span className="required-mark"/></CFormLabel>
-                      <div className="mr-2">
-                        <div className="row">
-                          <div className="col-md-6 form-group">
-                            <CFormLabel htmlFor="storeTimingOpen">Open Time <span className="required-mark"/></CFormLabel>
-                          </div>
-                          <div className="col-md-6 form-group">
-                            <CFormInput
-                              type="time"
-                              name="storeTimingOpen"
-                              id="storeTimingOpen"
-                              required
-                              value={this.state.storeTimingOpen}
-                              onChange={this.changeHandler}
-                            />
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-6 form-group">
-                            <CFormLabel htmlFor="storeTimingClose">Close Time <span className="required-mark"/></CFormLabel>
-                          </div>
-                          <div className="col-md-6 form-group">
-                            <CFormInput
-                              type="time"
-                              name="storeTimingClose"
-                              id="storeTimingClose"
-                              required
-                              value={this.state.storeTimingClose}
-                              onChange={this.changeHandler}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4 form-group">
-                      <CFormLabel htmlFor="storeStatus">Store Status <span className="required-mark"/></CFormLabel>
-                      <div>
-                        <CFormCheck id="storeStatus" label="Active" value={this.state.storeStatus} onChange={this.changeHandler} />
                       </div>
                     </div>
                   </div>

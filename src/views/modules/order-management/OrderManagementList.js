@@ -89,7 +89,7 @@ class OrderManagementList extends BaseListComponent {
             <button  className="btn btn-success text-white btn-sm" onClick={() => this.onClose(true)}>
               Accept
             </button>
-            <button  className="btn btn-danger btn-sm mr-2">
+            <button  className="btn btn-danger text-white  btn-sm mr-2">
               Reject
             </button>
           </>
@@ -149,7 +149,7 @@ class OrderManagementList extends BaseListComponent {
           </CModalBody>
           <CModalFooter>
             <CButton color="success" className="btn-sm text-white" onClick={() => this.onClose(true)}>Done</CButton>
-            <CButton color="secondary" className="btn-sm mr-2" onClick={() => this.onClose(false)}>Cancel</CButton>
+            <CButton color="secondary" className="btn-sm text-white mr-2" onClick={() => this.onClose(false)}>Cancel</CButton>
           </CModalFooter>
         </CModal>
       </section>

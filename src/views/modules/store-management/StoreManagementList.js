@@ -108,7 +108,7 @@ class StoreManagementList extends Component {
       selector: row => {
         return (
           <>
-            <Link to={"/store-management/edit"} className="btn btn-primary btn-sm"><CIcon icon={cilPencil} className="cursor-pointer"/></Link>
+            <Link to={"/store-management/edit"} className="btn btn-primary text-white btn-sm"><CIcon icon={cilPencil} className="cursor-pointer"/></Link>
             <ReactSwitch/>
           </>
         )
@@ -145,7 +145,7 @@ class StoreManagementList extends Component {
               <CCardHeader>
                 <strong>Store Management</strong>
                 <div className="float-end">
-                  <Link to={"/store-management/add"} className="btn btn-primary btn-sm">Add New</Link>
+                  <Link to={"/store-management/add"} className="btn text-white btn-primary btn-sm">Add New</Link>
                 </div>
               </CCardHeader>
               <CCardBody>

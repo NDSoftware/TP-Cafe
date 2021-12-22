@@ -17,9 +17,9 @@ import {cilPencil} from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 import ReactSwitch from "../../components/react-switch/React-Switch";
 import BaseListComponent from "../../../common/BaseListComponent";
-import RolesPermissionAddUpdate from "./RolesPermissionAddUpdate";
+import OfferManagementAddUpdate from "./OfferManagementAddUpdate";
 
-class RolesPermissionList extends BaseListComponent {
+class OfferManagementList extends BaseListComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,27 +30,23 @@ class RolesPermissionList extends BaseListComponent {
   data = [
     {
       id: 1,
-      userName: 'Dhairya',
-      createdDate: '21/08/2021',
-      createdBy: 'Bhavsar',
-      updatedDate: '22/08/2021',
-      updatedBy: 'John'
+      storeName: 'Store A',
+      couponCode: '112XX12XX',
+      minimumOrderValue: '100',
+      discount: '10',
+      startDate: '21/08/2021',
+      endDate: '21/08/2021',
+      status: 'Upcoming'
     },
     {
       id: 2,
-      userName: 'Smit',
-      createdDate: '21/08/2021',
-      createdBy: 'jim',
-      updatedDate: '22/08/2021',
-      updatedBy: 'John'
-    },
-    {
-      id: 3,
-      userName: 'Joe',
-      createdDate: '21/08/2021',
-      createdBy: 'Ownd',
-      updatedDate: '22/08/2021',
-      updatedBy: 'John'
+      storeName: 'Store B',
+      couponCode: '112XX12XX',
+      minimumOrderValue: '100',
+      discount: '10',
+      startDate: '21/08/2021',
+      endDate: '21/08/2021',
+      status: 'Upcoming'
     },
   ];
 
@@ -60,24 +56,32 @@ class RolesPermissionList extends BaseListComponent {
       selector: row => row.id,
     },
     {
-      name: 'User Name',
-      selector: row => row.userName,
+      name: 'Store Name',
+      selector: row => row.storeName,
     },
     {
-      name: 'Created Date',
-      selector: row => row.createdDate,
+      name: 'Coupon Code',
+      selector: row => row.couponCode,
     },
     {
-      name: 'Created By',
-      selector: row => row.createdBy,
+      name: 'Minimum Order Value',
+      selector: row => row.minimumOrderValue,
     },
     {
-      name: 'Updated Date',
-      selector: row => row.updatedDate,
+      name: 'Discount (%)',
+      selector: row => row.discount,
     },
     {
-      name: 'Updated By',
-      selector: row => row.updatedBy,
+      name: 'Start Date',
+      selector: row => row.startDate,
+    },
+    {
+      name: 'End Date',
+      selector: row => row.endDate,
+    },
+    {
+      name: 'Status',
+      selector: row => row.status,
     },
     {
       name: 'Action',
@@ -107,7 +111,7 @@ class RolesPermissionList extends BaseListComponent {
           <CCol xs={12}>
             <CCard className="mb-4">
               <CCardHeader>
-                <strong>Roles & Permission List</strong>
+                <strong>Offer Management</strong>
                 <div className="float-end">
                   <button className="btn btn-primary text-white btn-sm" onClick={this.modalHideShow}>Create</button>
                 </div>
@@ -124,13 +128,13 @@ class RolesPermissionList extends BaseListComponent {
         </CRow>
         <CModal visible={this.state.visible} onClose={this.modalHideShow}>
           <CModalHeader>
-            <CModalTitle>Add Roles and Permission</CModalTitle>
+            <CModalTitle>Add Offer Management</CModalTitle>
           </CModalHeader>
           <CModalBody>
-            <RolesPermissionAddUpdate/>
+            <OfferManagementAddUpdate />
           </CModalBody>
           <CModalFooter>
-            <CButton color="success" className="btn-sm text-white" onClick={this.modalHideShow}>Add</CButton>
+            <CButton color="success" className="btn-sm text-white" onClick={this.modalHideShow}>Create</CButton>
             <CButton color="secondary" className="btn-sm text-white" onClick={this.modalHideShow}>Cancel</CButton>
           </CModalFooter>
         </CModal>
@@ -139,4 +143,4 @@ class RolesPermissionList extends BaseListComponent {
   }
 }
 
-export default memo(RolesPermissionList);
+export default memo(OfferManagementList);

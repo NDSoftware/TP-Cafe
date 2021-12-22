@@ -103,7 +103,7 @@ class CategoryList extends Component {
        selector: row => {
          return (
            <>
-             <button  className="btn btn-primary btn-sm" onClick={() => this.onClose('edit')}>
+             <button  className="btn btn-primary btn-sm text-white" onClick={() => this.onClose('edit')}>
                <CIcon icon={cilPencil} className="cursor-pointer" />
              </button>
              <ReactSwitch/>
@@ -142,7 +142,7 @@ class CategoryList extends Component {
               <CCardHeader>
                 <strong>Category Management</strong>
                 <div className="float-end">
-                  <button className="btn btn-primary btn-sm" onClick={() => this.onClose('add')}>Add New</button>
+                  <button className="btn btn-primary text-white btn-sm" onClick={() => this.onClose('add')}>Add New</button>
                 </div>
               </CCardHeader>
               <CCardBody>
@@ -168,7 +168,7 @@ class CategoryList extends Component {
             </CForm>
           </CModalBody>
           <CModalFooter>
-            <CButton color="success" className="btn-sm" onClick={() => this.onClose('save')}>{this.state.add ? 'Add' : 'Save'} </CButton>
+            <CButton color="success text-white" className="btn-sm" onClick={() => this.onClose('save')}>{this.state.add ? 'Add' : 'Save'} </CButton>
           </CModalFooter>
         </CModal>
       </section>
