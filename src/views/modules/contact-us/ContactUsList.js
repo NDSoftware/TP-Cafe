@@ -2,9 +2,6 @@ import React from "react";
 import BaseListComponent from "../../../common/BaseListComponent";
 import {CCard, CCardBody, CCardHeader, CCol, CRow} from "@coreui/react";
 import DataTable from "react-data-table-component";
-import CIcon from "@coreui/icons-react";
-import {cilPencil} from "@coreui/icons";
-import ReactSwitch from "../../components/react-switch/React-Switch";
 
 class ContactUsList extends BaseListComponent {
 
@@ -44,6 +41,7 @@ class ContactUsList extends BaseListComponent {
     {
       name: 'Sr No.',
       selector: row => row.id,
+      width: '100px'
     },
     {
       name: 'First Name',

@@ -8,8 +8,6 @@ import {
   CCol,
   CRow
 } from "@coreui/react";
-import {cilPencil} from "@coreui/icons";
-import CIcon from "@coreui/icons-react";
 import ReactSwitch from "../../components/react-switch/React-Switch";
 import BaseListComponent from "../../../common/BaseListComponent";
 
@@ -52,6 +50,7 @@ class CustomerManagementList extends BaseListComponent {
     {
       name: 'Sr No.',
       selector: row => row.id,
+      width: '100px'
     },
     {
       name: 'First Name',

@@ -65,6 +65,7 @@ const ProductManagementAddUpdate = React.lazy(() => import('./views/modules/item
 const RolesPermission = React.lazy(() => import('./views/modules/roles-and-permissions/RolesPermissionList'));
 const ContactUs = React.lazy(() => import('./views/modules/contact-us/ContactUsList'));
 const OfferManagement = React.lazy(() => import('./views/modules/offer-management/OfferManagementList'));
+const reivewRating = React.lazy(() => import('./views/modules/review-rating/review-rating'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -121,7 +122,8 @@ const routes = [
   { path: '/item-management/add', name: 'Product Management Add', component: ProductManagementAddUpdate, exact: true},
   { path: '/roles-permissions', name: 'Roles & Permissions', component: RolesPermission, exact: true },
   { path: '/contact-us', name: 'Contact Us', component: ContactUs, exact: true },
-  {path: '/offer-management', name: 'Offer Management', component: OfferManagement, exact: true }
+  {path: '/offer-management', name: 'Offer Management', component: OfferManagement, exact: true },
+  {path: '/review-rating', name: 'Review & Rating', component: reivewRating, exact: true },
 ]
 
 export default routes

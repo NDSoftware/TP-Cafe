@@ -85,7 +85,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Review & Rating',
-    to: '/dashboard',
+    to: '/review-rating',
     icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
   },
   {

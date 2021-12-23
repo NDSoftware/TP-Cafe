@@ -94,6 +94,7 @@ class StoreManagementList extends Component {
     {
       name: 'Sr No.',
       selector: row => row.id,
+      width: '100px'
     },
     {
       name: 'Store Name',

@@ -56,6 +56,7 @@ class OrderManagementList extends BaseListComponent {
     {
       name: 'Sr No.',
       selector: row => row.id,
+      width: '100px'
     },
     {
       name: 'Order Id',

@@ -41,6 +41,7 @@ class ItemManagementList extends BaseListComponent {
     {
       name: 'Sr No.',
       selector: row => row.id,
+      width: '100px'
     },
     {
       name: 'Item Name',
