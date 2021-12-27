@@ -1,0 +1,34 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true,
+    "commonjs": true,
+    "node": true
+  },
+  "extends": ["plugin:react/recommended", "eslint:recommended"],
+  "plugins": ["import"],
+  // "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "react/prop-types": 0,
+    "no-unused-vars": "off",
+    "react/display-name": "off",
+    "no-undef": "off",
+    "no-unexpected-multiline": "off",
+    "no-useless-escape": "off",
+    "no-redeclare": "off",
+    "no-cond-assign": "off",
+    "no-empty": "off",
+    "no-self-assign": "off",
+    "no-prototype-builtins": "off",
+    "no-control-regex": "off",
+    "no-mixed-spaces-and-tabs": "off",
+    "no-debugger": "off"
+  },
+
+  "parser": "@typescript-eslint/parser"
+}

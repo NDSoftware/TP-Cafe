@@ -1,0 +1,2787 @@
+{
+	"info": {
+		"_postman_id": "fa7b20e7-70ad-4750-9f42-843416d6b41f",
+		"name": "TP-Cafe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mobile",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "otpType",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/services/send-otp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"services",
+								"send-otp"
+							]
+						},
+						"description": "**Description**\nThis is API to send OTP\n\n**Parameters**\n\n - mobile: required\n - otpType: required. Valid values are:\n\t - login"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "otp",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "otpType",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/services/verify-otp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"services",
+								"verify-otp"
+							]
+						},
+						"description": "**Description**\nUse this API to verify the OTP\n\n**Parameters**\n\n - otp: required\n - mobile: required\n - otpType: required. Valid values are:\n\t - login"
+					},
+					"response": []
+				},
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ravi.n.modha@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/services/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"services",
+								"login"
+							]
+						},
+						"description": "**Description**\nUse this API to authenticate the user.\n\n**Parameters**\n\n - email: required\n - password: required"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "aadharNumber",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "aadhar",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert a new user\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   email: required\n*   password: required\n*   firstName: required\n*   lastName: required\n*   mobile: optional\n*   address: optional\n*   aadharNumber: required\n*   aadhar: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "aadharNumber",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "aadhar",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "**Description**  \nUse this API to update the existing user\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   firstName: optional\n*   lastName: optional\n*   mobile: optional\n*   address: optional\n*   aadharNumber: optional\n*   aadhar: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the users\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   first_name\n    *   last_name\n    *   full_name\n    *   email\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "User details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to fetch the user details\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required."
+					},
+					"response": []
+				},
+				{
+					"name": "Deactive/Active",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to active/deactive the item\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   active: required. Send 'false' to deactive and 'true' to active"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item Category",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-category"
+							]
+						},
+						"description": "**Description**\nUse this API to insert the new item category\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- name: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-category"
+							]
+						},
+						"description": "**Description**\nUse this API to update the existing category\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required\n- name: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactive/Active",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item-category/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-category",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to active/deactive the category\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required\n- active: required. Send 'false' to deactive and 'true' to active"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-category"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "showAll",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the category\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   name\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional\n*   showAll: optional. Default is false. If this parameter is true, all the categories will be returned else only 'active' categories will be returned."
+					},
+					"response": []
+				},
+				{
+					"name": "Category details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item-category/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-category",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to fetch the category details\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item Tag",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item-tag",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-tag"
+							]
+						},
+						"description": "**Description**\nUse this API to insert the new item tag\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- name: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item-tag",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-tag"
+							]
+						},
+						"description": "**Description**\nUse this API to update the existing tag\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required\n- name: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactive/Active",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item-tag/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-tag",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to active/deactive the tag\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required\n- active: required. Send 'false' to deactive and 'true' to active"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item-tag",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-tag"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the tags\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   name\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "Tag details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item-tag/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-tag",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to fetch the tag details\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "gstNo",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "cityId",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "addr",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "openingTime",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "closingTime",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "contactNo",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "imgStore",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "gstCerti",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "registrationCerti",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/store",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert a new store\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   name: required\n*   gstNo: required\n*   cityId: required\n*   addr: optional\n*   zipcode: optional\n*   openingTime: optional. Valid format is (HH:mm)\n*   closingTime: optional Valid format is (HH:mm)\n*   contactNo: optional. Numbers only\n*   imgStore: optional. Multiple images can be sent using the same parameter\n*   gstCerti: optional. Only one file can be accepted\n*   registrationCerti: optional. Only one file can be accepted"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "gstNo",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "addr",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "zipcode",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "openingTime",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "closingTime",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "contactNo",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "imgStore",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "gstCerti",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "registrationCerti",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/store",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store"
+							]
+						},
+						"description": "**Description**  \nUse this API to update an existing store\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   name: optional\n*   gstNo: optional\n*   addr: optional\n*   zipcode:optional\n*   openingTime: optional. Valid format is (HH:mm)\n*   closingTime: optional Valid format is (HH:mm)\n*   contactNo: optional. Numbers only\n*   imgStore: optional. Multiple images can be sent using the same parameter. It will not replace/update files.\n*   gstCerti: optional. Only one file can be accepted. It will update the existing gst certificate file\n*   registrationCerti: optional. Only one file can be accepted. It will update the existing registration certificate file"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/store",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "showAll",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the stores\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   name\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional\n*   showAll: optional. Default is false. If this parameter is true, all the stores will be returned else only 'active' stores will be returned."
+					},
+					"response": []
+				},
+				{
+					"name": "Store details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/store/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to fetch the store details\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete asset",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/store-asset/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store-asset",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**\nUse this API to delete the store asset\n\n**Header**\n- Authorization: required\n\n**Parameters**\n- id: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactive/Active",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/store/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to active/deactive the store\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   active: required. Send 'false' to deactive and 'true' to active"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "State",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/state",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"state"
+							]
+						},
+						"description": "**Description**\nUse this API to list the states\n\n**Header**\n- Authorization: required"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "desp",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "isTodaySpecial",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "tag",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "imgItem",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert a new item\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   code: required\n*   name: required\n*   price: required\n*   category: required. to add multiple category, use the same key. It should be the category id and not category name\n*   tag: optional. to add multiple tags, use the same key. It should be the tag id and not tag name\n*   discount: optional\n*   desp: optional\n*   isTodaySpecial: optional. boolean only\n*   imgItem: optional. optional. to add multiple images, use the same key."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "desp",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "isTodaySpecial",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "tag",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "imgItem",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							]
+						},
+						"description": "**Description**  \nUse this API to update a existing item\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required.\n*   name: required.\n*   price: required.\n*   category: required. to add multiple category, use the same key. It should be the category id and not category name. **Must send all the selected category ids**.\n*   tag: optional. to add multiple tags, use the same key. It should be the tag id and not tag name. **Must send all the selected tag ids**.\n*   discount: optional.\n*   desp: optional.\n*   isTodaySpecial: optional. boolean only\n*   imgItem: optional. optional. to add multiple images, use the same key."
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "showAll",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description** Use this API to list the items\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   categoryId: optional.\n*   search: optional\n*   showAll: optional. Default is false. If this parameter is true, all the items will be returned else only 'active' items will be returned.\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   name\n    *   price\n    *   discount\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc"
+					},
+					"response": []
+				},
+				{
+					"name": "Item details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "**Description** Use this API to fetch the item details\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required."
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate/Active",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/item/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to active/deactive the item\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   active: required. Send 'false' to deactive and 'true' to active"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete asset",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/item-asset/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"item-asset",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to delete the item asset\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "anniversary",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "isStudent",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "imgProfile",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customer"
+							]
+						},
+						"description": "**Description**  \nUse this API to update the existing user\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   firstName: optional\n*   lastName: optional\n*   dob: optional. date format must be 'yyyy-mm-dd'\n*   anniversary: optional. date format must be 'yyyy-mm-dd'\n*   isStudent: optional. boolean only.\n*   gender: optional. Valid values are:\n    *   male\n    *   female\n*   imgProfile: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customer"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the customers\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   first_name\n    *   last_name\n    *   full_name\n    *   dob,\n    *   anniversary\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate/Active",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/customer/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customer",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to active/deactivate the customer\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   active: required. Send 'false' to deactivate and 'true' to active"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/customer/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact us",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "desp",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/services/contact-us",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"services",
+								"contact-us"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert contact us details\n\n**Parameters**\n\n*   firstName: required\n*   lastName: required\n*   desp: required.\n*   email: optional.\n*   mobile: optional.\n    \n\n**Note: Either mobile or email is required.**"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/contact-us",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"contact-us"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the contact us details\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   first_name\n    *   last_name\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "itemName",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "imgBanner",
+									"description": "required",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/banner",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"banner"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert a banner\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   title: required\n*   itemName: required\n*   imgBanner: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "itemName",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "imgBanner",
+									"description": "optional",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/banner",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"banner"
+							]
+						},
+						"description": "**Description**  \nUse this API to update the existing banner\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   title: optional\n*   itemName: optional\n*   imgBanner: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/banner",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"banner"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "showAll",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the banner\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   title\n    *   item_name\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   showAll: optional. Default is false. If this parameter is true, all the banners will be returned else only 'active' banners will be returned.\n*   search: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate/Activate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/banner/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"banner",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "b722a323-0ab5-4c1f-aaa3-2245aa3b3c13"
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to active/deactivate the banner\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   active: required. Send 'false' to deactivate and 'true' to active"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CMS",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/site-content",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"site-content"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert a new site content\n\n**Parameters**\n\n*   type: required. valid values are:\n    *   terms_condition\n    *   contact_us\n*   content: required."
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/site-content",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"site-content"
+							]
+						},
+						"description": "**Description**  \nUse this API to update the existing site content.\n\n**Parameters**\n\n*   id: required.\n*   content: required."
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/site-content",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"site-content"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to list the site contents\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   type\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc\n*   search: optional"
+					},
+					"response": []
+				},
+				{
+					"name": "Details by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/site-content/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"site-content",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to fetch the details of site content by id\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required."
+					},
+					"response": []
+				},
+				{
+					"name": "Details by type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/site-content/type/:type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"site-content",
+								"type",
+								":type"
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to fetch the details of site content by type\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   type: required. valid values are:\n    *   terms_condition\n    *   about_us"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate/Activate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/site-content/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"site-content",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "edcfe5d3-71df-405f-ac4d-119235ecbd57"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offer",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "storeId",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "coupon",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "minOrderAmt",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "discountRate",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "validFrom",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "validTo",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/offer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"offer"
+							]
+						},
+						"description": "**Description**  \nUse this API to insert a offer\n\n**Parameters**\n\n*   storeId: required.\n*   coupon: required.\n*   minOrderAmt: required.\n*   discountRate: required.\n*   validFrom: required\n*   validTo: required"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "minOrderAmt",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "discountRate",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "validFrom",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "validTo",
+									"value": "",
+									"description": "optional",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/offer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"offer"
+							]
+						},
+						"description": "**Description**  \nUse this API to update the existing offer.\n\n**Parameters**\n\n*   id: required.\n*   minOrderAmt: optional.\n*   discountRate: optional.\n*   validFrom: optional.\n*   validTo: optional."
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/offer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"offer"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "storeId",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "showAll",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						},
+						"description": "**Description** Use this API to list the offers\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   page: optional. Default is 1\n*   limit: optional. Default is 10\n*   storeId: optional.\n*   search: optional\n*   showAll: optional. Default is false. If this parameter is true, all the items will be returned else only 'active' items will be returned.\n*   orderBy: optional. Default is 'created_at'. Valid values are:\n    *   coupon\n    *   min_order_amt\n    *   discount_rate\n    *   valid_from\n    *   valid_to\n    *   store_name\n    *   created_at\n*   order: optional. Default is 'desc'. Valid values are:\n    *   asc\n    *   desc"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate/Activate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "active",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/offer/active/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"offer",
+								"active",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "required"
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to active/deactivate the offer\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required\n*   active: required. Send 'false' to deactivate and 'true' to active"
+					},
+					"response": []
+				},
+				{
+					"name": "Validate coupon",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/offer/:storeId/:coupon",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"offer",
+								":storeId",
+								":coupon"
+							],
+							"variable": [
+								{
+									"key": "storeId",
+									"value": "8292d81c-7f47-4db6-831b-7bf5a8524038"
+								},
+								{
+									"key": "coupon",
+									"value": "002"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Add order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"storeId\": \"\",\n    \"coupon\": \"\",\n    \"items\": [\n        {\n            \"id\": \"\",\n            \"qty\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						},
+						"description": "**Description**  \nUse this API to create the order\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   storeId: required\n*   coupon: optional\n*   items: required. It must an array of the objects.\n    *   id: required. It's an item id\n    *   qty: required.\n\n**Note:- In return you will get the razor pay Order ID which you can use further to initiate the payment on the razor pay.**"
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "paymentId",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "signature",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/order/checkout/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"checkout",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						},
+						"description": "**Description**  \nUse this API to checkout the order\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   id: required. it's an order id and not the razor pay order it.\n*   paymentId: required.\n*   signature: required.\n    \n\n**Note:- When the payment is done using razor, you will get the payment id and signature.**"
+					},
+					"response": []
+				},
+				{
+					"name": "My orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/order/my-orders/:type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"my-orders",
+								":type"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "optional",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "type",
+									"value": "",
+									"description": "required"
+								}
+							]
+						},
+						"description": "**Description** Use this API to get all my orders\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   type: required. valid values are:\n    *   upcoming\n    *   past\n*   page: optional. Default is 1\n*   limit: optional. Default is 10"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/city/:stateId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								":stateId"
+							],
+							"variable": [
+								{
+									"key": "stateId",
+									"value": ""
+								}
+							]
+						},
+						"description": "**Description** Use this API to list the cities\n\n**Header**\n\n*   Authorization: required\n    \n\n**Parameters**\n\n*   stateId: required."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

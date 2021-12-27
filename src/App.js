@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Route, Switch, BrowserRouter } from 'react-router-dom'
+import {Route, Switch, HashRouter, Redirect} from 'react-router-dom'
 import './scss/style.scss'
 import 'font-awesome/css/font-awesome.min.css';
-import {Provider} from "react-redux";
 import {ToastContainer} from "react-toastify";
-import store from "./store";
 import 'react-toastify/dist/ReactToastify.css';
 
 const loading = (
@@ -24,25 +22,42 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <BrowserRouter>
+      <>
+        <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
-              <Route exact path="/login" name="Login Page" render={(props) => <Login {...props} />} />
-              {/*<Route
-                exact
-                path="/register"
-                name="Register Page"
-                render={(props) => <Register {...props} />}
-              />*/}
+              <Route exact path="/login" name="Login Page" render={(props) =>
+                !localStorage.getItem("token") ? (
+                  <Login {...props}  />
+                ) : (
+                  <Redirect to="/" />
+                )}
+              />
+              <Route exact path="/forgot-password" name="Forgot Password Page" render={(props) =>
+                !localStorage.getItem("token") ? (
+                  <Login {...props}  />
+                ) : (
+                  <Redirect to="/" />
+                )}
+              />
               <Route exact path="/404" name="Page 404" render={(props) => <Page404 {...props} />} />
               <Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />
-              <Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />
+              <Route path="/" name="Home" render={(props) =>
+                !localStorage.getItem("token") ? (
+                  <Redirect to="/login" />
+                ) : (
+                  <DefaultLayout {...props} />
+                )}
+              />
+              {/*<Route exact path="/login" name="Login Page" render={(props) => <Login {...props} />} />*/}
+              {/*<Route exact path="/404" name="Page 404" render={(props) => <Page404 {...props} />} />*/}
+              {/*<Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />*/}
+              {/*<Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />*/}
             </Switch>
           </React.Suspense>
-        </BrowserRouter>
+        </HashRouter>
         <ToastContainer />
-      </Provider>
+      </>
     )
   }
 }

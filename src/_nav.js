@@ -91,31 +91,31 @@ const _nav = [
   {
     component: CNavItem,
     name: 'CMS Management',
-    to: '/dashboard',
+    to: '/login',
     icon: <CIcon icon={cilFindInPage} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Banner Management',
-    to: '/dashboard',
+    to: '/login',
     icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Setting',
-    to: '/dashboard',
+    to: '/login',
     icon: <CIcon icon={cilSettings} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'User Management',
-    to: '/dashboard',
+    to: '/login',
     icon: <CIcon icon={cilUserPlus} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
     name: 'Payment Management',
-    to: '/dashboard',
+    to: '/login',
     icon: <CIcon icon={cilMoney} customClassName="nav-icon" />,
   },
   /*{
